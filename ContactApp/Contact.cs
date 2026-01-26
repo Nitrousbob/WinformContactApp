@@ -17,6 +17,13 @@ namespace ContactApp
             
         }
 
+        public override string? ToString()
+        {
+            return $"Name: {FirstName} {LastName} Phone: {PhoneNumber} Email: {Email}";
+            //return base.ToString() + " toast";
+        }
+
+
         //what a contact can do
     }
 }
