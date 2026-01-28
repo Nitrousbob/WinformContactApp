@@ -11,8 +11,6 @@ namespace ContactApp
             InitializeComponent();
             Contacts = new List<Contact>();
 
-            AddContact("Bear", "Fulmer");
-
             //refreshes the list box with the newest contacts
             UpdateContactListBox();
         }
@@ -26,7 +24,7 @@ namespace ContactApp
             }
         }
 
-        public void AddContact(
+        public void AddContact(  //a method to add a contact by details
             string first,
             string last,
             string? phone = null,
@@ -41,7 +39,7 @@ namespace ContactApp
                 Email = email
             });
         }
-        public void AddContact(Contact contact)
+        public void AddContact(Contact contact)  //a method to add a contact by object
         {
             Contacts.Add(contact);
         }
@@ -68,6 +66,19 @@ namespace ContactApp
             Contacts.Add(newContact);  //Add the Contact to the Contact List
             //update the list
             UpdateContactListBox();
+        }
+
+        private void lbContacts_Click(object sender, EventArgs e)
+        {
+            Contact selectedObject = (Contact) lbContacts.SelectedItem;
+            if (selectedObject != null)
+            {
+                int selectedIndex = lbContacts.SelectedIndex;
+
+                Debug.WriteLine($"contact list box was clicked: {selectedObject}");
+                selectedObject.IsContacted = true;
+                lbContacts.Items[selectedIndex] = selectedObject; //update the item in the list box
+            }
         }
     }
 }
