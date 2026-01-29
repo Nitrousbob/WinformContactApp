@@ -53,6 +53,25 @@ namespace ContactApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //validate the data, some type of failure message
+            if (txtFirstName.Text.Length <= 0) //check if first name does not contain data
+            {
+                MessageBox.Show("First name must contain a letter.");
+                txtFirstName.Focus();
+                return;
+            }
+            if (txtLastName.Text.Length <= 0) //check if first name does not contain data
+            {
+                MessageBox.Show("Last name must contain a letter.");
+                txtLastName.Focus();
+                return;
+            }
+            if (txtEmail.Text.Length <= 0 && txtPhoneNumber.Text.Length <= 0) //check if email and phone number
+            {
+                MessageBox.Show("You need an Email or Phone number to create a contact.");
+                txtPhoneNumber.Focus();
+                return;
+            }
             //capture data
             //create a new contact
             Contact newContact = new Contact  //Create a Contact Object
@@ -66,11 +85,13 @@ namespace ContactApp
             Contacts.Add(newContact);  //Add the Contact to the Contact List
             //update the list
             UpdateContactListBox();
+            ClearForm();
+            txtFirstName.Focus(); //set focus back to the first name text box
         }
 
         private void lbContacts_Click(object sender, EventArgs e)
         {
-            Contact selectedObject = (Contact) lbContacts.SelectedItem;
+            Contact selectedObject = (Contact)lbContacts.SelectedItem;
             if (selectedObject != null)
             {
                 int selectedIndex = lbContacts.SelectedIndex;
@@ -78,7 +99,26 @@ namespace ContactApp
                 Debug.WriteLine($"contact list box was clicked: {selectedObject}");
                 selectedObject.IsContacted = true;
                 lbContacts.Items[selectedIndex] = selectedObject; //update the item in the list box
+                //show message box that says the contact was contacted
+                MessageBox.Show($"Mark {selectedObject.FirstName} {selectedObject.LastName} as contacted?", "Success");
+                lbContacts.Items.RemoveAt(selectedIndex);
+                //lbContacts.Items = Contacts.Where(contact => contact.IsContacted == false);
             }
+        }
+
+        private void ClearForm()
+        {             
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtPhoneNumber.Clear();
+            txtEmail.Clear();
+        }
+
+        private void btn_ClearClicked(object sender, EventArgs e)
+        {
+            //gain access to the text boxes and clear them
+            ClearForm();
+            txtFirstName.Focus();
         }
     }
 }
