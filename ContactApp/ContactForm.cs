@@ -100,7 +100,7 @@ namespace ContactApp
                 selectedObject.IsContacted = true;
                 lbContacts.Items[selectedIndex] = selectedObject; //update the item in the list box
                 //show message box that says the contact was contacted
-                MessageBox.Show($"Mark {selectedObject.FirstName} {selectedObject.LastName} as contacted?", "Success");
+                MessageBox.Show($"Marking {selectedObject.FirstName} {selectedObject.LastName} as contacted.", "Success");
                 lbContacts.Items.RemoveAt(selectedIndex);
                 //lbContacts.Items = Contacts.Where(contact => contact.IsContacted == false);
             }
