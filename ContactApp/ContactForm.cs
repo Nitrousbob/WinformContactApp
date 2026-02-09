@@ -12,16 +12,17 @@ namespace ContactApp
             Contacts = new List<Contact>();
 
             //refreshes the list box with the newest contacts
-            UpdateContactListBox();
+            UpdateContactList();
         }
 
-        public void UpdateContactListBox()
+        public void UpdateContactList()
         {
-            lbContacts.Items.Clear();  //clear existing items in the list box
-            foreach (Contact contact in Contacts)
-            {
-                lbContacts.Items.Add(contact); //add each contact to the list box
-            }
+            //lbContacts.Items.Clear();  //clear existing items in the list box
+            //foreach (Contact contact in Contacts)
+            //{
+            //    lbContacts.Items.Add(contact); //add each contact to the list box
+            //}
+            // TODO: create a new contact control and add it to fpContacts
         }
 
         public void AddContact(  //a method to add a contact by details
@@ -84,7 +85,7 @@ namespace ContactApp
             //add it to the list
             Contacts.Add(newContact);  //Add the Contact to the Contact List
             //update the list
-            UpdateContactListBox();
+            UpdateContactList();
             ClearForm();
             txtFirstName.Focus(); //set focus back to the first name text box
         }
