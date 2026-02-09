@@ -179,11 +179,12 @@
             AcceptButton = btnSave;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.InactiveCaption;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(569, 467);
             Controls.Add(lbContacts);
             Controls.Add(lblContactList);
             Controls.Add(gbContact);
+            ForeColor = SystemColors.ControlText;
             Name = "ContactForm";
             Text = "Contacts";
             Load += ContactForm_Load;
