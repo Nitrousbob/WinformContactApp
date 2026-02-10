@@ -158,6 +158,7 @@
             // 
             // fpContacts
             // 
+            fpContacts.AutoScroll = true;
             fpContacts.AutoSize = true;
             fpContacts.Dock = DockStyle.Fill;
             fpContacts.FlowDirection = FlowDirection.TopDown;

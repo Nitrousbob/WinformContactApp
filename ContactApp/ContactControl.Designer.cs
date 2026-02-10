@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             Label lblFullNameLabel;
-            Label lblFullName;
             Label lblPhoneLabel;
             Label lblAddressLabel;
+            lblFullName = new Label();
             btnMarkContacted = new Button();
             lblPhoneDisplay = new Label();
             lblEmailInfo = new Label();
             lblFullNameLabel = new Label();
-            lblFullName = new Label();
             lblPhoneLabel = new Label();
             lblAddressLabel = new Label();
             SuspendLayout();
@@ -45,27 +44,17 @@
             // 
             lblFullNameLabel.AutoSize = true;
             lblFullNameLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFullNameLabel.Location = new Point(3, 10);
+            lblFullNameLabel.Location = new Point(3, 3);
             lblFullNameLabel.Name = "lblFullNameLabel";
             lblFullNameLabel.Size = new Size(66, 25);
             lblFullNameLabel.TabIndex = 0;
             lblFullNameLabel.Text = "Name:";
             // 
-            // lblFullName
-            // 
-            lblFullName.AutoSize = true;
-            lblFullName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFullName.Location = new Point(92, 10);
-            lblFullName.Name = "lblFullName";
-            lblFullName.Size = new Size(91, 25);
-            lblFullName.TabIndex = 1;
-            lblFullName.Text = "John Doe";
-            // 
             // lblPhoneLabel
             // 
             lblPhoneLabel.AutoSize = true;
             lblPhoneLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPhoneLabel.Location = new Point(3, 35);
+            lblPhoneLabel.Location = new Point(3, 28);
             lblPhoneLabel.Name = "lblPhoneLabel";
             lblPhoneLabel.Size = new Size(70, 25);
             lblPhoneLabel.TabIndex = 2;
@@ -75,17 +64,29 @@
             // 
             lblAddressLabel.AutoSize = true;
             lblAddressLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAddressLabel.Location = new Point(3, 60);
+            lblAddressLabel.Location = new Point(3, 53);
             lblAddressLabel.Name = "lblAddressLabel";
             lblAddressLabel.Size = new Size(62, 25);
             lblAddressLabel.TabIndex = 4;
             lblAddressLabel.Text = "Email:";
             // 
+            // lblFullName
+            // 
+            lblFullName.AutoSize = true;
+            lblFullName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFullName.Location = new Point(92, 3);
+            lblFullName.Name = "lblFullName";
+            lblFullName.Size = new Size(91, 25);
+            lblFullName.TabIndex = 1;
+            lblFullName.Text = "John Doe";
+            // 
             // btnMarkContacted
             // 
-            btnMarkContacted.Location = new Point(273, 14);
+            btnMarkContacted.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMarkContacted.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnMarkContacted.Location = new Point(267, 3);
             btnMarkContacted.Name = "btnMarkContacted";
-            btnMarkContacted.Size = new Size(75, 23);
+            btnMarkContacted.Size = new Size(86, 29);
             btnMarkContacted.TabIndex = 6;
             btnMarkContacted.Text = "Contact";
             btnMarkContacted.UseVisualStyleBackColor = true;
@@ -95,7 +96,7 @@
             // 
             lblPhoneDisplay.AutoSize = true;
             lblPhoneDisplay.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPhoneDisplay.Location = new Point(92, 35);
+            lblPhoneDisplay.Location = new Point(92, 28);
             lblPhoneDisplay.Name = "lblPhoneDisplay";
             lblPhoneDisplay.Size = new Size(104, 25);
             lblPhoneDisplay.TabIndex = 7;
@@ -105,7 +106,7 @@
             // 
             lblEmailInfo.AutoSize = true;
             lblEmailInfo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEmailInfo.Location = new Point(92, 60);
+            lblEmailInfo.Location = new Point(92, 53);
             lblEmailInfo.Name = "lblEmailInfo";
             lblEmailInfo.Size = new Size(133, 25);
             lblEmailInfo.TabIndex = 8;
@@ -115,6 +116,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             Controls.Add(lblEmailInfo);
             Controls.Add(lblPhoneDisplay);
             Controls.Add(btnMarkContacted);
@@ -123,7 +125,7 @@
             Controls.Add(lblFullName);
             Controls.Add(lblFullNameLabel);
             Name = "ContactControl";
-            Size = new Size(356, 174);
+            Size = new Size(356, 91);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -134,5 +136,6 @@
         private Button btnMarkContacted;
         private Label lblPhoneDisplay;
         private Label lblEmailInfo;
+        private Label lblFullName;
     }
 }
