@@ -18,9 +18,9 @@ namespace ContactApp
             ContactDetails = contactDetails;
 
             //fill in all the details on the control using the data
-            lblFullNameLabel.Text = $"{ContactDetails.FullName}";
-            lblEmailAddress.Text = ContactDetails.Email;
-            lblPhoneNumber.Text = ContactDetails.PhoneNumber;
+            lblFullName.Text = $"{ContactDetails.FullName}";
+            lblEmailInfo.Text = ContactDetails.Email;
+            lblPhoneDisplay.Text = ContactDetails.PhoneNumber;
         }
 
         private void btnMarkContacted_Click(object sender, EventArgs e)

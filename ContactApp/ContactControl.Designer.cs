@@ -30,16 +30,14 @@
         {
             Label lblFullNameLabel;
             Label lblFullName;
-            Label lblPhoneNumber;
             Label lblPhoneLabel;
-            Label lblEmailAddress;
             Label lblAddressLabel;
             btnMarkContacted = new Button();
+            lblPhoneDisplay = new Label();
+            lblEmailInfo = new Label();
             lblFullNameLabel = new Label();
             lblFullName = new Label();
-            lblPhoneNumber = new Label();
             lblPhoneLabel = new Label();
-            lblEmailAddress = new Label();
             lblAddressLabel = new Label();
             SuspendLayout();
             // 
@@ -63,16 +61,6 @@
             lblFullName.TabIndex = 1;
             lblFullName.Text = "John Doe";
             // 
-            // lblPhoneNumber
-            // 
-            lblPhoneNumber.AutoSize = true;
-            lblPhoneNumber.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPhoneNumber.Location = new Point(92, 35);
-            lblPhoneNumber.Name = "lblPhoneNumber";
-            lblPhoneNumber.Size = new Size(138, 25);
-            lblPhoneNumber.TabIndex = 3;
-            lblPhoneNumber.Text = "XXX-XXX-XXXX";
-            // 
             // lblPhoneLabel
             // 
             lblPhoneLabel.AutoSize = true;
@@ -83,25 +71,15 @@
             lblPhoneLabel.TabIndex = 2;
             lblPhoneLabel.Text = "Phone:";
             // 
-            // lblEmailAddress
-            // 
-            lblEmailAddress.AutoSize = true;
-            lblEmailAddress.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEmailAddress.Location = new Point(92, 60);
-            lblEmailAddress.Name = "lblEmailAddress";
-            lblEmailAddress.Size = new Size(173, 25);
-            lblEmailAddress.TabIndex = 5;
-            lblEmailAddress.Text = "person@place.com";
-            // 
             // lblAddressLabel
             // 
             lblAddressLabel.AutoSize = true;
             lblAddressLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAddressLabel.Location = new Point(3, 60);
             lblAddressLabel.Name = "lblAddressLabel";
-            lblAddressLabel.Size = new Size(83, 25);
+            lblAddressLabel.Size = new Size(62, 25);
             lblAddressLabel.TabIndex = 4;
-            lblAddressLabel.Text = "Address:";
+            lblAddressLabel.Text = "Email:";
             // 
             // btnMarkContacted
             // 
@@ -113,14 +91,34 @@
             btnMarkContacted.UseVisualStyleBackColor = true;
             btnMarkContacted.Click += btnMarkContacted_Click;
             // 
+            // lblPhoneDisplay
+            // 
+            lblPhoneDisplay.AutoSize = true;
+            lblPhoneDisplay.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPhoneDisplay.Location = new Point(92, 35);
+            lblPhoneDisplay.Name = "lblPhoneDisplay";
+            lblPhoneDisplay.Size = new Size(104, 25);
+            lblPhoneDisplay.TabIndex = 7;
+            lblPhoneDisplay.Text = "Phone XXX";
+            // 
+            // lblEmailInfo
+            // 
+            lblEmailInfo.AutoSize = true;
+            lblEmailInfo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblEmailInfo.Location = new Point(92, 60);
+            lblEmailInfo.Name = "lblEmailInfo";
+            lblEmailInfo.Size = new Size(133, 25);
+            lblEmailInfo.TabIndex = 8;
+            lblEmailInfo.Text = "person@place";
+            // 
             // ContactControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lblEmailInfo);
+            Controls.Add(lblPhoneDisplay);
             Controls.Add(btnMarkContacted);
-            Controls.Add(lblEmailAddress);
             Controls.Add(lblAddressLabel);
-            Controls.Add(lblPhoneNumber);
             Controls.Add(lblPhoneLabel);
             Controls.Add(lblFullName);
             Controls.Add(lblFullNameLabel);
@@ -134,5 +132,7 @@
 
         private Label lblFullNameLabel;
         private Button btnMarkContacted;
+        private Label lblPhoneDisplay;
+        private Label lblEmailInfo;
     }
 }
