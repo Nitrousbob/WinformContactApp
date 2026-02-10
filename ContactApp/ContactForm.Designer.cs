@@ -158,11 +158,14 @@
             // 
             // fpContacts
             // 
+            fpContacts.AutoSize = true;
+            fpContacts.Dock = DockStyle.Fill;
             fpContacts.FlowDirection = FlowDirection.TopDown;
-            fpContacts.Location = new Point(0, 228);
+            fpContacts.Location = new Point(0, 222);
             fpContacts.Name = "fpContacts";
-            fpContacts.Size = new Size(569, 243);
+            fpContacts.Size = new Size(569, 245);
             fpContacts.TabIndex = 1;
+            fpContacts.WrapContents = false;
             // 
             // ContactForm
             // 
@@ -180,6 +183,7 @@
             gbContact.ResumeLayout(false);
             gbContact.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

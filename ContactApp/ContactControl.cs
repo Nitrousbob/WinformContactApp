@@ -10,9 +10,23 @@ namespace ContactApp
 {
     public partial class ContactControl : UserControl
     {
-        public ContactControl()
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public Contact ContactDetails { get; set; }
+        public ContactControl(Contact contactDetails)
         {
             InitializeComponent();
+            ContactDetails = contactDetails;
+
+            //fill in all the details on the control using the data
+            lblFullNameLabel.Text = $"{ContactDetails.FullName}";
+            lblEmailAddress.Text = ContactDetails.Email;
+            lblPhoneNumber.Text = ContactDetails.PhoneNumber;
+        }
+
+        private void btnMarkContacted_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"You have marked {ContactDetails.FullName} as contacted.");
+
         }
     }
 }

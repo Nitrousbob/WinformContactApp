@@ -32,14 +32,14 @@
             Label lblFullName;
             Label lblPhoneNumber;
             Label lblPhoneLabel;
-            Label lblAddress;
+            Label lblEmailAddress;
             Label lblAddressLabel;
             btnMarkContacted = new Button();
             lblFullNameLabel = new Label();
             lblFullName = new Label();
             lblPhoneNumber = new Label();
             lblPhoneLabel = new Label();
-            lblAddress = new Label();
+            lblEmailAddress = new Label();
             lblAddressLabel = new Label();
             SuspendLayout();
             // 
@@ -83,15 +83,15 @@
             lblPhoneLabel.TabIndex = 2;
             lblPhoneLabel.Text = "Phone:";
             // 
-            // lblAddress
+            // lblEmailAddress
             // 
-            lblAddress.AutoSize = true;
-            lblAddress.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAddress.Location = new Point(17, 85);
-            lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(179, 50);
-            lblAddress.TabIndex = 5;
-            lblAddress.Text = "123 Johnson Drive\r\nCentralia, Wa 98531\r\n";
+            lblEmailAddress.AutoSize = true;
+            lblEmailAddress.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblEmailAddress.Location = new Point(92, 60);
+            lblEmailAddress.Name = "lblEmailAddress";
+            lblEmailAddress.Size = new Size(173, 25);
+            lblEmailAddress.TabIndex = 5;
+            lblEmailAddress.Text = "person@place.com";
             // 
             // lblAddressLabel
             // 
@@ -111,13 +111,14 @@
             btnMarkContacted.TabIndex = 6;
             btnMarkContacted.Text = "Contact";
             btnMarkContacted.UseVisualStyleBackColor = true;
+            btnMarkContacted.Click += btnMarkContacted_Click;
             // 
             // ContactControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(btnMarkContacted);
-            Controls.Add(lblAddress);
+            Controls.Add(lblEmailAddress);
             Controls.Add(lblAddressLabel);
             Controls.Add(lblPhoneNumber);
             Controls.Add(lblPhoneLabel);
