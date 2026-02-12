@@ -1,0 +1,34 @@
+﻿using System.ComponentModel;
+
+namespace ContactApp
+{
+    public partial class ContactControl : UserControl
+    {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public Contact ContactDetails { get; set; }
+        public ContactControl(Contact contactDetails)
+        {
+            InitializeComponent();
+            ContactDetails = contactDetails;
+
+            //fill in all the details on the control using the data
+            lblFullName.Text = $"{ContactDetails.FullName}";
+            lblEmailInfo.Text = ContactDetails.Email;
+            lblPhoneDisplay.Text = ContactDetails.PhoneNumber;
+        }
+
+        private void btnMarkContacted_Click(object sender, EventArgs e)
+        {
+            var frm = this.Parent?.Parent as ContactForm;
+
+            if (frm != null)
+            {
+                frm.Contacts.Remove(ContactDetails);
+                frm.UpdateContactList();
+            }
+
+            //MessageBox.Show($"You have marked {ContactDetails.FullName} as contacted.");
+
+        }
+    }
+}

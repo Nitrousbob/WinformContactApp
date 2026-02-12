@@ -12,16 +12,18 @@ namespace ContactApp
             Contacts = new List<Contact>();
 
             //refreshes the list box with the newest contacts
-            UpdateContactListBox();
+            UpdateContactList();
         }
 
-        public void UpdateContactListBox()
+        public void UpdateContactList()
         {
-            lbContacts.Items.Clear();  //clear existing items in the list box
+            fpContacts.Controls.Clear();  //clear existing items in the flow panel
             foreach (Contact contact in Contacts)
             {
-                lbContacts.Items.Add(contact); //add each contact to the list box
+                fpContacts.Controls.Add(new ContactControl(contact)); //add each contact to the flow panel
+                //lbContacts.Items.Add(contact); //add each contact to the list box
             }
+            // TODO: create a new contact control and add it to fpContacts
         }
 
         public void AddContact(  //a method to add a contact by details
@@ -84,26 +86,28 @@ namespace ContactApp
             //add it to the list
             Contacts.Add(newContact);  //Add the Contact to the Contact List
             //update the list
-            UpdateContactListBox();
+            UpdateContactList();
             ClearForm();
             txtFirstName.Focus(); //set focus back to the first name text box
         }
 
         private void lbContacts_Click(object sender, EventArgs e)
         {
-            Contact selectedObject = (Contact)lbContacts.SelectedItem;
-            if (selectedObject != null)
-            {
-                int selectedIndex = lbContacts.SelectedIndex;
+            //Contact selectedObject = (Contact)lbContacts.SelectedItem;
+            //if (selectedObject != null)
+            //{
+            //    int selectedIndex = lbContacts.SelectedIndex;
 
-                Debug.WriteLine($"contact list box was clicked: {selectedObject}");
-                selectedObject.IsContacted = true;
-                lbContacts.Items[selectedIndex] = selectedObject; //update the item in the list box
-                //show message box that says the contact was contacted
-                MessageBox.Show($"Marking {selectedObject.FirstName} {selectedObject.LastName} as contacted.", "Success");
-                lbContacts.Items.RemoveAt(selectedIndex);
-                //lbContacts.Items = Contacts.Where(contact => contact.IsContacted == false);
-            }
+            //    Debug.WriteLine($"contact list box was clicked: {selectedObject}");
+            //    selectedObject.IsContacted = true;
+            //    lbContacts.Items[selectedIndex] = selectedObject; //update the item in the list box
+            //    //show message box that says the contact was contacted
+            //    MessageBox.Show($"Marking {selectedObject.FirstName} {selectedObject.LastName} as contacted.", "Success");
+            //    lbContacts.Items.RemoveAt(selectedIndex);
+            //    //lbContacts.Items = Contacts.Where(contact => contact.IsContacted == false);
+            //}
+
+            // TODO: create a new contact control and add it to fpContacts, then we can handle the click event in the contact control instead of the list box
         }
 
         private void ClearForm()
