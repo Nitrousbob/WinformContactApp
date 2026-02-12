@@ -25,7 +25,15 @@ namespace ContactApp
 
         private void btnMarkContacted_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"You have marked {ContactDetails.FullName} as contacted.");
+            var frm = this.Parent?.Parent as ContactForm;
+
+            if (frm != null)
+            {
+                frm.Contacts.Remove(ContactDetails);
+                frm.UpdateContactList();
+            }
+            
+            //MessageBox.Show($"You have marked {ContactDetails.FullName} as contacted.");
 
         }
     }
