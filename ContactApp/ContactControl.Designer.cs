@@ -84,11 +84,12 @@
             // 
             btnMarkContacted.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnMarkContacted.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnMarkContacted.Location = new Point(267, 3);
+            btnMarkContacted.Location = new Point(263, 3);
             btnMarkContacted.Name = "btnMarkContacted";
             btnMarkContacted.Size = new Size(86, 29);
             btnMarkContacted.TabIndex = 6;
             btnMarkContacted.Text = "Contact";
+            btnMarkContacted.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnMarkContacted.UseVisualStyleBackColor = true;
             btnMarkContacted.Click += btnMarkContacted_Click;
             // 
@@ -125,7 +126,7 @@
             Controls.Add(lblFullName);
             Controls.Add(lblFullNameLabel);
             Name = "ContactControl";
-            Size = new Size(356, 91);
+            Size = new Size(352, 91);
             ResumeLayout(false);
             PerformLayout();
         }
