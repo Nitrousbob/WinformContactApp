@@ -96,7 +96,7 @@ namespace ContactApp
             {
                 int selectedIndex = lbContacts.SelectedIndex;
 
-                Debug.WriteLine($"contact list box was clicked: {selectedObject}");
+                //Debug.WriteLine($"contact list box was clicked: {selectedObject}");
                 selectedObject.IsContacted = true;
                 lbContacts.Items[selectedIndex] = selectedObject; //update the item in the list box
                 //show message box that says the contact was contacted
